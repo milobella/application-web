@@ -1,0 +1,14 @@
+{
+  "/api/*": {
+    "target": "https://milobella.com",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/gitlab/*": {
+    "target": "https://milobella.com",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": false
+  }
+}
