@@ -11,7 +11,7 @@
     <script type="systemjs-importmap">
       {
         "imports": {
-          "menu": "http://localhost:4201/main.js",
+          "spa-menu": "http://localhost:4201/main.js",
           "spa-try-it": "http://localhost:4202/main.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.4.1/system/single-spa.min.js"
         }
@@ -32,9 +32,9 @@
 <script>
     System.import('single-spa').then(function (singleSpa) {
         singleSpa.registerApplication(
-            'menu',
+            'spa-menu',
             function () {
-                return System.import('menu');
+                return System.import('spa-menu');
             },
             function (location) {
                 return true;

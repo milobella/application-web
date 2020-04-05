@@ -4,15 +4,14 @@ several part called micro-frontends.
 
 Each of the microfrontends have their own Pod and Service.
 
-Some of the microfrontends are in this repository :
-- [portal](#portal)
-- [menu](#menu)
+The [portal](#portal) folder contains single spa main configuration. It contains no business and configure only the single spa applications.
 
-Some have their own repository to facilitate the development by other teams. They are easy to recognize because they
+All single spa applications have their own respective folder. They are easy to recognize because they
 are all prefixed by `spa-` in the repositories :
-- [spa-try-it](#spa-try-it) : interface to speak with Milobella
-- [spa-nlu-management](#spa-nlu-management) : interface to manage text understanding models
-- [spa-nlg-management](#spa-nlg-management) : interface to manage text generation models
+- [spa-menu](#spa-menu): Menu of the website
+- [spa-try-it](#spa-try-it): interface to speak with Milobella
+- [spa-nlu-management](#spa-nlu-management): interface to manage text understanding models
+- [spa-nlg-management](#spa-nlg-management): interface to manage text generation models
 
 >
 > In coming:
@@ -25,7 +24,7 @@ are all prefixed by `spa-` in the repositories :
 ``portal`` is the main MF of the website. It does not contain a lot of html and its only purpose is to merge
 every MFs in one unique page.
 
-##### Menu
+##### SPA Menu
 The `menu` MF is materialized by the navigation bar at the top of the site. It allows us to navigate in
 each tab of the website which are probably each separated in their own MF.
 
