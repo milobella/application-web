@@ -27,7 +27,7 @@ jobs:
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push ${GITHUB_REPOSITORY}:${IMAGE_TAG}
+          args: push milobella/portal:${IMAGE_TAG}
 
   build-spa-menu:
     runs-on: ubuntu-latest
@@ -50,4 +50,4 @@ jobs:
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push ${GITHUB_REPOSITORY}:${IMAGE_TAG}
+          args: push milobella/spa-menu:${IMAGE_TAG}
