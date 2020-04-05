@@ -1,0 +1,19 @@
+### This file is using multi-stage builds https://docs.docker.com/develop/develop-images/multistage-build/
+### It requires 17.05 or higher to be run
+
+########################################################################
+### builder stage : Build the node application in /src/dist folder
+FROM node as builder
+
+COPY . /src
+WORKDIR /src
+RUN npm install && npm run build
+
+########################################################################
+
+
+########################################################################
+### app stage : Run an apache server from the built dist folder
+FROM httpd:2.4 as app
+COPY --from=builder /src/dist/ /usr/local/apache2/htdocs/
+########################################################################

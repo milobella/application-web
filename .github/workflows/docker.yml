@@ -6,7 +6,7 @@ on:
        - 'v*'
 
 jobs:
-  build:
+  build-portal:
     runs-on: ubuntu-latest
     
     steps:
@@ -21,7 +21,30 @@ jobs:
 
       - name: Build image
         if: success()
-        run: cd portal && docker build -t ${GITHUB_REPOSITORY}:${IMAGE_TAG} .
+        run: cd portal && docker build -t milobella/portal:${IMAGE_TAG} .
+
+      - name: Push to docker registry
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push ${GITHUB_REPOSITORY}:${IMAGE_TAG}
+
+  build-spa-menu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Login to docker hub
+        if: success()
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build image
+        if: success()
+        run: cd spa-menu && docker build -t milobella/spa-menu:${IMAGE_TAG} .
 
       - name: Push to docker registry
         if: success()
