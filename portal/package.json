@@ -1,18 +1,20 @@
 {
-  "name": "root-html-file",
-  "description": "The single-spa root config for coexisting-angular-microfrontends",
+  "name": "milobella-portal",
+  "description": "The single-spa root config for Milobella website",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
-  "author": "Joel Denning",
+  "author": "Célian GARCIA",
   "license": "MIT",
   "devDependencies": {
     "html-webpack-plugin": "^3.2.0",
     "serve": "^11.1.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {}
 }
