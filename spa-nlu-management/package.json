@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "build:single-spa": "ng build --prod --deploy-url http://localhost:4203/",
+    "build:single-spa": "ng build --prod --deploy-url http://localhost:4203/ --output-hashing none",
     "serve:single-spa": "ng serve --disable-host-check --port 4203 --deploy-url http://localhost:4203/ --live-reload false"
   },
   "private": true,
