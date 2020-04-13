@@ -67,7 +67,7 @@ jobs:
 
       - name: Build image
         if: success()
-        run: cd spa-menu && docker build -t milobella/spa-try-it:${IMAGE_TAG} .
+        run: cd spa-try-it && docker build -t milobella/spa-try-it:${IMAGE_TAG} .
 
       - name: Push to docker registry
         if: success()
