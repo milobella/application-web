@@ -7,7 +7,7 @@ FROM node as builder
 
 COPY . /src
 WORKDIR /src
-RUN npm install && npm run build
+RUN yarn install && yarn run build
 
 ########################################################################
 

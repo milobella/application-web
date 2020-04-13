@@ -5,55 +5,107 @@
           content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * data: blob: 'unsafe-inline'; font-src * data: blob: 'unsafe-inline';">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Your application</title>
+    <title>Milobella</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="importmap-type" content="systemjs-importmap">
+<!--    <script type="systemjs-importmap">-->
+<!--      {-->
+<!--        "imports": {-->
+<!--          "spa-menu": "http://localhost:4201/main.js",-->
+<!--          "spa-try-it": "http://localhost:4202/main.js",-->
+<!--          "spa-login": "http://localhost:4203/main.js",-->
+<!--          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.4.1/system/single-spa.min.js"-->
+<!--        }-->
+<!--      }-->
+<!--    </script>-->
     <script type="systemjs-importmap">
       {
         "imports": {
           "spa-menu": "https://milobella.com:10443/spa/menu/main-es2015.js",
           "spa-try-it": "https://milobella.com:10443/spa/try-it/main-es2015.js",
+          "spa-login": "https://milobella.com:10443/spa/login/main-es2015.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.4.1/system/single-spa.min.js"
         }
       }
-
     </script>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.4.1/system/single-spa.min.js"
           as="script" crossorigin="anonymous"/>
     <script src='https://unpkg.com/core-js-bundle@3.1.4/minified.js'></script>
     <script src="https://unpkg.com/zone.js"></script>
-    <script src="https://unpkg.com/import-map-overrides@1.6.0/dist/import-map-overrides.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/system.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/amd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-exports.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
+    <script src="https://unpkg.com/import-map-overrides@1.7.2/dist/import-map-overrides.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/system.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/amd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/named-exports.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/named-register.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.1.1/extras/use-default.min.js"></script>
+
 </head>
 <body>
 <script>
-    System.import('single-spa').then(function (singleSpa) {
-        singleSpa.registerApplication(
-            'spa-menu',
-            function () {
-                return System.import('spa-menu');
-            },
-            function (location) {
-                return true;
-            }
-        );
 
-        singleSpa.registerApplication(
-            'spa-try-it',
-            function () {
-                return System.import('spa-try-it');
-            },
-            function (location) {
-                return location.pathname.startsWith('/spa-try-it');
-            }
-        );
+  function showWhenAnyOf(app, routes, location) {
+    console.log("Finding location : ", location);
+    if (routes.some((route) => location.pathname === route)) {
+      console.log("This location match the app " + app);
+      return true;
+    }
+    return false;
+  }
 
-        singleSpa.start();
-    })
+  function showWhenPrefix(app, routes, location) {
+    console.log("Finding location : ", location);
+    if (routes.some((route) => location.pathname.startsWith(route))) {
+      console.log("This location match the app " + app);
+      return true;
+    }
+    return false;
+  }
+
+  function showExcept(app, routes, location) {
+    console.log("Finding location : ", location);
+    if (routes.every((route) => location.pathname !== route)) {
+      console.log("This location match the app " + app);
+      return true;
+    }
+    return false;
+  }
+
+  System.import('single-spa').then(function (singleSpa) {
+    singleSpa.registerApplication(
+      'spa-menu',
+      function () {
+        return System.import('spa-menu');
+      },
+      function (location) {
+        return showExcept('spa-menu', ['/login'], location);
+      }
+    );
+
+    singleSpa.registerApplication(
+      'spa-try-it',
+      function () {
+        return System.import('spa-try-it');
+      },
+      function (location) {
+        return showWhenAnyOf('spa-try-it', ['/'], location);
+      }
+    );
+
+    singleSpa.registerApplication(
+      'spa-login',
+      function () {
+        return System.import('spa-login');
+      },
+      function (location) {
+        // login spa is enabled on / because it is used as a guard for now
+        return showWhenPrefix('spa-login', ['/'], location);
+      }
+    );
+
+    singleSpa.start();
+  })
+
 </script>
-<import-map-overrides-full></import-map-overrides-full>
+<import-map-overrides-full show-when-local-storage="overrides-ui"></import-map-overrides-full>
 </body>
 </html>

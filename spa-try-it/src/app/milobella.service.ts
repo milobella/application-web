@@ -17,6 +17,6 @@ export class MilobellaService {
   constructor(private http: HttpClient) { }
 
   invoke(request: MilobellaRequest): Observable<MilobellaResponse> {
-    return this.http.post<MilobellaResponse>('api/talk/text', request, this.httpOptions);
+    return this.http.post<MilobellaResponse>('talk/text', request, this.httpOptions);
   }
 }
