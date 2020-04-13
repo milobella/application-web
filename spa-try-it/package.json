@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxyconfig.json",
-    "build": "ng build",
+    "start": "npm run serve:single-spa",
+    "build": "npm run build:single-spa",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa": "ng build --prod --deploy-url http://localhost:4202/ --output-hashing none",
-    "serve:single-spa": "ng serve --disable-host-check --port 4202 --deploy-url http://localhost:4202/ --live-reload false --proxy-config proxyconfig.json"
+    "build:single-spa": "ng build --prod --deploy-url https://milobella.com:10443/spa/try-it --output-hashing none",
+    "serve:single-spa": "ng serve --disable-host-check --port 4202 --deploy-url http://localhost:4202/ --live-reload false"
   },
   "private": true,
   "dependencies": {
