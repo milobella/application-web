@@ -1,3 +1,5 @@
+![.github/workflows/docker.yml](https://github.com/milobella/application-web/workflows/.github/workflows/docker.yml/badge.svg)
+
 # Milobella website portal
 The milobella website is powered by [single-spa](https://single-spa.js.org). It allows us to separate it in 
 several part called micro-frontends.
