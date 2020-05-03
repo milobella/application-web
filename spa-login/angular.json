@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spa-login": {
+    "login": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,12 +12,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "spa-login",
+      "prefix": "login",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/spa-login",
+            "outputPath": "dist/login",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "spa-login:build"
+            "browserTarget": "login:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "spa-login:build:production"
+              "browserTarget": "login:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spa-login:build"
+            "browserTarget": "login:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "spa-login:serve"
+            "devServerTarget": "login:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "spa-login:serve:production"
+              "devServerTarget": "login:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "spa-login"
+  "defaultProject": "login"
 }
