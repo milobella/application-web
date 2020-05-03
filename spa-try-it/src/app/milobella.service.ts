@@ -3,7 +3,6 @@ import { MilobellaRequest } from './milobella-request';
 import { MilobellaResponse } from './milobella-response';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { User } from '../../../spa-login/src/app/login/user';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -15,7 +14,7 @@ export class MilobellaService {
   }
 
   invoke(request: MilobellaRequest): Observable<MilobellaResponse> {
-    const user: User = JSON.parse(localStorage.getItem('currentUser'));
+    const user = JSON.parse(localStorage.getItem('currentUser'));
     if (!user || !user.token) {
       this.redirectToLogin();
     }
