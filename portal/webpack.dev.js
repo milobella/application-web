@@ -10,8 +10,13 @@ module.exports = merge(common, {
     historyApiFallback: true,
     // Send API requests on localhost to API server get around CORS.
     proxy: {
-      '/api/talk': {
-        target: 'https://milobella.com:10443/talk',
+      '/talk/text': {
+        target: 'https://milobella.com:10443',
+        secure: false,
+        changeOrigin: true
+      },
+      '/users/authenticate': {
+        target: 'https://milobella.com:10443',
         secure: false,
         changeOrigin: true
       }

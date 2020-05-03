@@ -74,3 +74,26 @@ jobs:
         uses: actions-hub/docker@master
         with:
           args: push milobella/spa-try-it:${IMAGE_TAG}
+
+  build-spa-login:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Login to docker hub
+        if: success()
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build image
+        if: success()
+        run: cd spa-login && docker build -t milobella/spa-login:${IMAGE_TAG} .
+
+      - name: Push to docker registry
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push milobella/spa-login:${IMAGE_TAG}
