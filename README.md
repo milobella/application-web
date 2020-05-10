@@ -30,12 +30,14 @@ every MFs in one unique page.
 The `menu` MF is materialized by the navigation bar at the top of the site. It allows us to navigate in
 each tab of the website which are probably each separated in their own MF.
 
+> More details here : [spa-menu](spa-menu).
+
 ##### SPA Try It
 ``spa-try-it`` is a simple and pure chat tool.
 
 We write something and Milobella answers us, nothing more...
 
-> More details here : [spa-try-it](https://milobella.com/gitlab/milobella/website/spa-try-it.git).
+> More details here : [spa-try-it](spa-try-it).
 
 ##### SPA NLU Management
 ``spa-nlu-management`` is the module of Natural Language Understanding.
@@ -43,7 +45,7 @@ It will contain the sentences which permits to train the understanding model.
 
 We can write a text, categorize it and tag some important words or group of words in the sentence.
 
-> More details here : [spa-nlu-management](https://milobella.com/gitlab/milobella/website/spa-nlu-management.git).
+> More details here : [spa-nlu-management](spa-nlu-management).
 
 ##### SPA NLG Management
 ``spa-nlg-management`` is the module of Natural Language Generation.
@@ -54,7 +56,7 @@ On the left we have a very detailed robotic sentence produced by Milobella.
 On the right we give some "translations" in real life words. We can add one or more sentences by robotic ones, and by
 language.
 
-> More details here : [spa-nlg-management](https://milobella.com/gitlab/milobella/website/spa-nlg-management.git).
+> More details here : [spa-nlg-management](spa-nlg-management).
 
 ##### SPA STT Configuration
 > In construction
