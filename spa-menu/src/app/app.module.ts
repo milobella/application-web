@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
+import { AssetUrlPipe } from './pipes/asset-url.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    EmptyRouteComponent
+    EmptyRouteComponent,
+    AssetUrlPipe
   ],
   imports: [
     BrowserModule,
