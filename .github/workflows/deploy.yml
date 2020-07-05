@@ -7,8 +7,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    matrix:
-      component: ["portal", "spa-menu", "spa-login", "spa-try-it"]
+    strategy:
+      matrix:
+        component: ["portal", "spa-menu", "spa-login", "spa-try-it"]
     steps:
       - uses: actions/checkout@master
 
