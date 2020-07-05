@@ -1,0 +1,38 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    matrix:
+      component: ["portal", "spa-menu", "spa-login", "spa-try-it"]
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Login to docker hub
+        if: success()
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build image
+        if: success()
+        run: |
+          cd ${{ matrix.component }}
+          docker build -t milobella/${{ matrix.component }}:${IMAGE_TAG} -t milobella/${{ matrix.component }}:latest .
+
+      - name: Push version to docker registry
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push milobella/${{ matrix.component }}:${IMAGE_TAG}
+
+      - name: Push latest to docker registry
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push milobella/${{ matrix.component }}:latest

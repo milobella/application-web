@@ -1,0 +1,24 @@
+name: Build
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    matrix:
+      component: ["portal", "spa-menu", "spa-login", "spa-try-it"]
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Build image
+        if: success()
+        run: |
+          cd ${{ matrix.component }}
+          docker build -t milobella/${{ matrix.component }}:dev .
