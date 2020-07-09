@@ -18,10 +18,13 @@
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
+            ],
+            "allowedCommonJsDependencies": [
+              "single-spa-angular/internals"
             ],
             "styles": [
               "src/styles.css",

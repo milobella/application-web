@@ -9,11 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:single-spa": "ng build --prod --deploy-url https://milobella.com:10443/spa/login --output-hashing none",
-    "serve:single-spa": "ng serve --disable-host-check --port 4203 --deploy-url http://localhost:4203/ --live-reload false"
+    "serve:single-spa": "ng serve --port 4203 --deploy-url http://localhost:4203 --serve-path / --live-reload false"
   },
   "private": true,
   "dependencies": {
-    "@angular-builders/custom-webpack": "^8",
+    "@angular-builders/custom-webpack": "^10.0.0-beta.0",
     "@angular/animations": "~10.0.2",
     "@angular/common": "~10.0.2",
     "@angular/compiler": "~10.0.2",
