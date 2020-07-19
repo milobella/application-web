@@ -1,0 +1,42 @@
+:host {
+  position: relative;
+  height: 3rem;
+  border-radius: 5px;
+}
+
+.highlight-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: solid 3px rgba(217, 119, 100, 0.91);
+  border-radius: 5px;
+  background-color: rgba(226, 122, 104, 0.5);
+}
+
+.line {
+  width: 100%;
+  height:100%;
+
+  * {
+    display: inline-block;
+
+    height:100%;
+  }
+  .outlet-left {
+    float:left;
+    border-right: solid 2px rgba(36, 41, 46, 0.1);
+    width: 3rem;
+  }
+  .line-content {
+    float:left;
+    padding: 0 0.5em;
+  }
+  .outlet-right {
+    float:right;
+    border-left: solid 2px rgba(36, 41, 46, 0.1);
+    width: 3rem;
+  }
+}
+

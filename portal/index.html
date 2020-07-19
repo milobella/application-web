@@ -14,6 +14,7 @@
 <!--          "spa-menu": "http://localhost:4201/main.js",-->
 <!--          "spa-try-it": "http://localhost:4202/main.js",-->
 <!--          "spa-login": "http://localhost:4203/main.js",-->
+<!--          "spa-abilities": "http://localhost:4204/main.js",-->
 <!--          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.4.1/system/single-spa.min.js"-->
 <!--        }-->
 <!--      }-->
@@ -87,7 +88,17 @@
         return System.import('spa-try-it');
       },
       function (location) {
-        return showWhenAnyOf('spa-try-it', ['/'], location);
+        return showWhenAnyOf('spa-try-it', ['/', '/spa-try-it'], location);
+      }
+    );
+
+    singleSpa.registerApplication(
+      'spa-abilities',
+      function () {
+        return System.import('spa-abilities');
+      },
+      function (location) {
+        return showWhenAnyOf('spa-abilities', ['/spa-abilities'], location);
       }
     );
 
