@@ -19,7 +19,7 @@ export class TableComponent implements OnInit {
   set data(data: object[]) {
     this._data = data;
     // TODO : find a way at this point, to force table lines to send again pois
-    this._pois = new Array<OutletPair>(this._data.length);
+    this._pois = new Array<OutletPair>(this._data.length).fill(null);
   }
 
   get data(): object[] {
@@ -46,7 +46,7 @@ export class TableComponent implements OnInit {
 
   public registerPoi(index: number, poi: OutletPair): void {
     this._pois[index] = poi;
-    if (this._pois.length !== 0 && this._pois.every(value =>  isNotNullOrUndefined(value))) {
+    if (this._pois.length !== 0 && this._pois.every(value => isNotNullOrUndefined(value))) {
       this.pois.emit(this._pois);
     }
   }
