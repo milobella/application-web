@@ -35,6 +35,7 @@ export class LinkComponent implements OnInit, OnDestroy, AfterViewInit {
     this._to = link.to;
 
     if (link.from && link.to) {
+      console.log(link.from.y);
       this.elementRef.nativeElement.style.left = this._from.x - THICKNESS + 'px';
       this.elementRef.nativeElement.style.top = Math.min(this._from.y, this._to.y) - THICKNESS + 'px';
       this.elementRef.nativeElement.style.width = this._to.x - this._from.x + (THICKNESS * 2) + 'px';
@@ -80,12 +81,16 @@ export class LinkComponent implements OnInit, OnDestroy, AfterViewInit {
 
       const curve = new Graphics();
 
+      const delta = this._from.y < this._to.y ? -THICKNESS : THICKNESS;
+
       const width = this.elementRef.nativeElement.offsetWidth - THICKNESS * 2.0;
+      const fromYPosition = this._from.y - this.elementRef.nativeElement.offsetTop;
+      const toYPosition = this._to.y - this._from.y;
       curve.lineStyle(2, 0xF1A66D, 1);
-      curve.bezierCurveTo(width / 3.0, -THICKNESS, 2 * width / 3.0, THICKNESS, width, 0);
+      curve.bezierCurveTo(width / 3.0, delta, 2 * width / 3.0, toYPosition - delta, width, toYPosition);
 
       curve.position.x = THICKNESS;
-      curve.position.y = THICKNESS;
+      curve.position.y = fromYPosition;
 
       curve.lineStyle(0);
       curve.beginFill(0xF1A66D, 1);
@@ -94,7 +99,7 @@ export class LinkComponent implements OnInit, OnDestroy, AfterViewInit {
 
       curve.lineStyle(0);
       curve.beginFill(0xF1A66D, 1);
-      curve.drawCircle(width, 0, 7);
+      curve.drawCircle(width, toYPosition, 7);
       curve.endFill();
 
       this.app.stage.addChild(curve);
