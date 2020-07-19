@@ -5,7 +5,7 @@ import {
   EventEmitter,
   Input
 } from '@angular/core';
-import { OutletPair } from '../model/outlet.model';
+import { OutletPair } from './outlet.model';
 import { isNotNullOrUndefined } from 'codelyzer/util/isNotNullOrUndefined';
 
 @Component({
@@ -47,7 +47,6 @@ export class TableComponent implements OnInit {
   public registerPoi(index: number, poi: OutletPair): void {
     this._pois[index] = poi;
     if (this._pois.length !== 0 && this._pois.every(value =>  isNotNullOrUndefined(value))) {
-      console.log('Emit !');
       this.pois.emit(this._pois);
     }
   }

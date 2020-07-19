@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
-import { OutletPair } from '../model/outlet.model';
+import { OutletPair } from '../outlet.model';
 
 @Component({
   selector: 'abilities-table-line',

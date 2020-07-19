@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Outlet } from '../model/outlet.model';
+import { Outlet } from '../table/outlet.model';
 
 @Component({
   selector: 'abilities-container',

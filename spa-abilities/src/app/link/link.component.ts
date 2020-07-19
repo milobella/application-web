@@ -9,7 +9,7 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import { Outlet } from '../model/outlet.model';
+import { Outlet } from '../table/outlet.model';
 import { Application, Graphics } from 'pixi.js';
 
 
@@ -35,10 +35,6 @@ export class LinkComponent implements OnInit, OnDestroy, AfterViewInit {
     this._to = link.to;
 
     if (link.from && link.to) {
-      console.log(this._from.x);
-      console.log(this._from.y);
-      console.log(this._to.x);
-      console.log(this._to.y);
       this.elementRef.nativeElement.style.left = this._from.x - THICKNESS + 'px';
       this.elementRef.nativeElement.style.top = Math.min(this._from.y, this._to.y) - THICKNESS + 'px';
       this.elementRef.nativeElement.style.width = this._to.x - this._from.x + (THICKNESS * 2) + 'px';
