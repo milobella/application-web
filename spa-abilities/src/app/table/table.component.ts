@@ -30,6 +30,9 @@ export class TableComponent implements OnInit {
   @Input()
   public highlightIndex = -1;
 
+  @Input()
+  public title: string;
+
   @Output()
   public pois: EventEmitter<OutletPair[]> = new EventEmitter<OutletPair[]>();
 

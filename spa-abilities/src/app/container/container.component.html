@@ -1,9 +1,19 @@
-<div id="tables-container">
-  <abilities-table id="cache-abilities" [data]="abilities.cache" (pois)="setFromLink($event[0].right)"></abilities-table>
-  <abilities-table id="database-abilities" [data]="abilities.database" (pois)="setToLink($event[0].left)" [highlightIndex]="0"></abilities-table>
-  <abilities-table id="config-abilities" [data]="abilities.config"></abilities-table>
-</div>
 
-<ng-container *ngFor="let link of links">
-  <abilities-link [link]="link"></abilities-link>
-</ng-container>
+<!-- ##############  In development ############### -->
+<!--<div id="tables-container">-->
+<!--  <abilities-table id="cache-abilities" title="Cache" [data]="abilities.cache" (pois)="setFromLink($event[0].right)"></abilities-table>-->
+<!--  <abilities-table id="database-abilities" title="Database" [data]="abilities.database" (pois)="setToLink($event[0].left)" [highlightIndex]="0"></abilities-table>-->
+<!--  <abilities-table id="config-abilities" title="Configuration" [data]="abilities.config"></abilities-table>-->
+<!--</div>-->
+
+<!--<ng-container *ngFor="let link of links">-->
+<!--  <abilities-link [link]="link"></abilities-link>-->
+<!--</ng-container>-->
+<!-- ##############  End ############### -->
+
+
+<div id="tables-container">
+  <abilities-table id="cache-abilities" title="Cache" [data]="abilities.cache"></abilities-table>
+  <abilities-table id="database-abilities" title="Database" [data]="abilities.database"></abilities-table>
+  <abilities-table id="config-abilities" title="Configuration" [data]="abilities.config"></abilities-table>
+</div>

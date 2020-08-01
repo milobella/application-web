@@ -1,3 +1,4 @@
+<h3 class="title" *ngIf="title">{{title}}</h3>
 <ng-container *ngFor="let ability of data; let index = index;">
   <abilities-table-line [ability]="ability" (poi)="registerPoi(index, $event)" [highlighted]="highlightIndex === index"></abilities-table-line>
 </ng-container>
