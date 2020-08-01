@@ -13,7 +13,7 @@ RUN yarn install && yarn run build
 
 
 ########################################################################
-### app stage : Run an apache server from the built dist folder
+### app stage : Run an nginx server from the built dist folder
 FROM nginx as app
 EXPOSE 80
 COPY --from=builder /src/nginx.conf /etc/nginx/nginx.conf
