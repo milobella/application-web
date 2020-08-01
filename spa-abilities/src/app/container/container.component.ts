@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Outlet } from '../table/outlet.model';
 import { AbilityService } from '../api/v1/ability.service';
+import { Abilities } from '../api/v1/ability.model';
 
 @Component({
   selector: 'abilities-container',
@@ -9,11 +10,7 @@ import { AbilityService } from '../api/v1/ability.service';
 })
 export class ContainerComponent implements OnInit {
 
-  public abilities: { cache: object[], database: object[], config: object[] } = {
-    cache: [{name: 'cinema', intents: ['LAST_SHOWTIME'], host: 'localhost', port: 10200}],
-    database: [{name: 'cinema', intents: ['LAST_SHOWTIME'], host: 'localhost', port: 10200}],
-    config: [{name: 'cinema', intents: ['LAST_SHOWTIME'], host: 'localhost', port: 10200}],
-  };
+  public abilities: Abilities;
 
   public links: { from: Outlet, to: Outlet }[] = [
     {
@@ -27,7 +24,7 @@ export class ContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAbilities().subscribe(value => {
-      console.log(value);
+      this.abilities = value;
     }, error => {
       // console.log(error);
       // alert(error);

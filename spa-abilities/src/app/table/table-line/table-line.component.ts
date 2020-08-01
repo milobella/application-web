@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { OutletPair } from '../outlet.model';
+import { Ability } from '../../api/v1/ability.model';
 
 @Component({
   selector: 'abilities-table-line',
@@ -10,6 +11,9 @@ export class TableLineComponent implements OnInit {
 
   @Input()
   public highlighted = false;
+
+  @Input()
+  public ability: Ability;
 
   @Output()
   public poi: EventEmitter<OutletPair> = new EventEmitter<OutletPair>();

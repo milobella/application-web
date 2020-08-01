@@ -1,7 +1,7 @@
 <div id="tables-container">
-  <abilities-table id="cache-abilities" [data]="[{}, {}]" (pois)="setFromLink($event[0].right)"></abilities-table>
-  <abilities-table id="database-abilities" [data]="[{}, {}, {}, {}]" (pois)="setToLink($event[0].left)" [highlightIndex]="0"></abilities-table>
-  <abilities-table id="config-abilities" [data]="[{}, {}, {}]"></abilities-table>
+  <abilities-table id="cache-abilities" [data]="abilities.cache" (pois)="setFromLink($event[0].right)"></abilities-table>
+  <abilities-table id="database-abilities" [data]="abilities.database" (pois)="setToLink($event[0].left)" [highlightIndex]="0"></abilities-table>
+  <abilities-table id="config-abilities" [data]="abilities.config"></abilities-table>
 </div>
 
 <ng-container *ngFor="let link of links">

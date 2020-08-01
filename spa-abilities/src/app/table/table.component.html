@@ -1,3 +1,3 @@
-<ng-container *ngFor="let elt of data; let index = index;">
-  <abilities-table-line (poi)="registerPoi(index, $event)" [highlighted]="highlightIndex === index"></abilities-table-line>
+<ng-container *ngFor="let ability of data; let index = index;">
+  <abilities-table-line [ability]="ability" (poi)="registerPoi(index, $event)" [highlighted]="highlightIndex === index"></abilities-table-line>
 </ng-container>
