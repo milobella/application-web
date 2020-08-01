@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+}
+
+abilities-table-line {
+  width: 100%;
+  background-color: #f8f9fa;
+  display: block;
+  padding: 0.5em 0;
+  &:not(:last-child) {
+    margin-bottom: 0.2em;
+  }
+}
+
+

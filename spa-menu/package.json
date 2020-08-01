@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run serve:single-spa",
-    "build": "npm run build:single-spa",
+    "start": "yarn run serve:single-spa",
+    "build": "yarn run build:single-spa",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -13,7 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-builders/custom-webpack": "^10.0.0-beta.0",
+    "@angular-builders/custom-webpack": "^10.0.0",
     "@angular/animations": "~10.0.2",
     "@angular/common": "~10.0.2",
     "@angular/compiler": "~10.0.2",

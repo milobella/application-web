@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        component: ["portal", "spa-menu", "spa-login", "spa-try-it"]
+        component: ["portal", "spa-menu", "spa-login", "spa-try-it", "spa-abilities"]
     steps:
       - uses: actions/checkout@master
 

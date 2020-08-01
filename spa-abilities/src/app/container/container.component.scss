@@ -1,0 +1,12 @@
+#tables-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+abilities-table {
+  width: 30%;
+  background-color: #e0e2e3;
+  padding: 5px;
+}

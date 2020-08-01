@@ -1,0 +1,20 @@
+<div class="line">
+  <div class="outlet-left">
+
+  </div>
+  <div class="line-content">
+    <div style="width: 100%"><b>ability-{{ability.name}}</b></div>
+    <div style="float: right;">{{ability.host}}:{{ability.port}}</div>
+    <div style="width: 100%">
+      <ng-container *ngFor="let intent of ability.intents">
+        <span class="badge badge-secondary">{{intent}}</span>
+      </ng-container>
+    </div>
+
+
+  </div>
+  <div class="outlet-right">
+  </div>
+</div>
+
+<div *ngIf="highlighted" class="highlight-layer"></div>
