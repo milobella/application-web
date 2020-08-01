@@ -15,11 +15,21 @@ module.exports = merge(common, {
         secure: false,
         changeOrigin: true
       },
+      '/api/v1/talk/text': {
+        target: 'https://milobella.com:10443',
+        secure: false,
+        changeOrigin: true
+      },
+      '/api/v1/abilities': {
+        target: 'https://milobella.com:10443',
+        secure: false,
+        changeOrigin: true
+      },
       '/users/authenticate': {
         target: 'https://milobella.com:10443',
         secure: false,
         changeOrigin: true
-      }
+      },
     }
   },
 });
