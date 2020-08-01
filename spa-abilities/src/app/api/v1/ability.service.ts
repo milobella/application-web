@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Abilities, Ability } from './ability.model';
 import { catchError, retry } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,9 @@ export class AbilityService {
   /**
    * Define the API.
    */
-  private endpoint = 'api/v1/abilities';
+  private endpoint = '/api/v1/abilities';
 
-  /**
-   * Common Http options
-   */
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-    })
-  };
-
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
   /**
@@ -120,7 +111,7 @@ export class AbilityService {
    * @param endpoint coming after /api/v1/abilities (e.g. : endpoint = "/hello" -> request on "api/v1/abilities/hello")
    */
   private makeGetRequest<T>(endpoint?: string): Observable<T> {
-    return this.http.get<T>(this.endpoint + endpoint, this.httpOptions)
+    return this.http.get<T>(this.endpoint + endpoint, this.buildHttpOptions())
       .pipe(
         retry(1),
         catchError(AbilityService.handleError)
@@ -133,7 +124,7 @@ export class AbilityService {
    * @param endpoint coming after /api/v1/abilities (e.g. : endpoint = "/hello" -> request on "api/v1/abilities/hello")
    */
   private makePostRequest<T>(ability: Ability, endpoint?: string): Observable<T> {
-    return this.http.post<T>(this.endpoint + endpoint, JSON.stringify(ability), this.httpOptions)
+    return this.http.post<T>(this.endpoint + endpoint, JSON.stringify(ability), this.buildHttpOptions())
       .pipe(
         retry(1),
         catchError(AbilityService.handleError)
@@ -145,10 +136,27 @@ export class AbilityService {
    * @param endpoint coming after /api/v1/abilities (e.g. : endpoint = "/hello" -> request on "api/v1/abilities/hello")
    */
   private makeDeleteRequest<T>(endpoint: string): Observable<T> {
-    return this.http.delete<T>(this.endpoint + endpoint, this.httpOptions)
+    return this.http.delete<T>(this.endpoint + endpoint, this.buildHttpOptions())
       .pipe(
         retry(1),
         catchError(AbilityService.handleError)
       );
+  }
+
+  /**
+   * Build all the http options, especially, the authorization header from the user token.
+   */
+  private buildHttpOptions(): object {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (!user || !user.token) {
+      this.router.navigate(['/login']);
+    }
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        Authorization: `Bearer ${user.token}`,
+      })
+    };
   }
 }

@@ -3,17 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "yarn run serve:single-spa",
+    "build": "yarn run build:single-spa",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa": "ng build --prod --deploy-url http://localhost:4200/",
-    "serve:single-spa": "ng serve --disable-host-check --port 4204 --deploy-url http://localhost:4204/ --live-reload false"
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "build:single-spa": "ng build --prod --deploy-url https://milobella.com:10443/spa/abilities --output-hashing none",
+    "serve:single-spa": "ng serve --port 4204 --deploy-url http://localhost:4204 --serve-path / --live-reload false"
   },
   "private": true,
   "dependencies": {
-    "@angular-builders/custom-webpack": "^8",
+    "@angular-builders/custom-webpack": "^10.0.0",
     "@angular/animations": "~10.0.3",
     "@angular/common": "~10.0.3",
     "@angular/compiler": "~10.0.3",

@@ -8,6 +8,7 @@ import { ContainerComponent } from './container/container.component';
 import { TableComponent } from './table/table.component';
 import { TableLineComponent } from './table/table-line/table-line.component';
 import { LinkComponent } from './link/link.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { LinkComponent } from './link/link.component';
     LinkComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

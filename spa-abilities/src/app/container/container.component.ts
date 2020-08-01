@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Outlet } from '../table/outlet.model';
+import { AbilityService } from '../api/v1/ability.service';
 
 @Component({
   selector: 'abilities-container',
@@ -21,10 +22,16 @@ export class ContainerComponent implements OnInit {
     },
   ];
 
-  constructor() {
+  constructor(private service: AbilityService) {
   }
 
   ngOnInit(): void {
+    this.service.getAbilities().subscribe(value => {
+      console.log(value);
+    }, error => {
+      // console.log(error);
+      // alert(error);
+    });
   }
 
   setFromLink($event: Outlet): void {
