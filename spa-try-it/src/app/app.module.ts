@@ -12,7 +12,7 @@ import { EmptyRouteComponent } from './empty-route/empty-route.component';
   declarations: [
     AppTryItComponent,
     MilobellaFormComponent,
-    EmptyRouteComponent
+    EmptyRouteComponent,
   ],
   imports: [
     BrowserModule,

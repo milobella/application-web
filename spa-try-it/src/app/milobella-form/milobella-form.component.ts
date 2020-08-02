@@ -10,16 +10,16 @@ import {MilobellaResponse} from '../milobella-response';
 })
 export class MilobellaFormComponent {
 
-  @Output() answer: EventEmitter<string> = new EventEmitter();
+  @Output() answer: EventEmitter<MilobellaResponse> = new EventEmitter();
 
   question = '';
-  timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   constructor(private milobellaService: MilobellaService) {}
 
   onSubmit() {
     this.milobellaService.invoke(new MilobellaRequest(this.question, this.timezone))
-      .subscribe((data: MilobellaResponse) => this.answer.emit(data.vocal));
+      .subscribe((data: MilobellaResponse) => this.answer.emit(data));
   }
 
 }
