@@ -4,7 +4,13 @@
   </h1>
   <div class="h-50 w-100">
     <app-milobella-form class="h-50 w-100 d-block" (answer)="answer = $event"></app-milobella-form>
-    <h2 class="h-50 w-100 d-block text-right">{{answer}}</h2>
+    <h2 *ngIf="answer" class="h-50 w-100 d-block text-right">{{answer.vocal}}</h2>
+    <ng-container *ngIf="answer && answer.visu" class="h-50 w-100 d-block text-right">
+      <div *ngFor="let visual of answer.visu" class="text-right">
+        <h3>{{visual.title}}</h3>
+        <p style="white-space: pre-wrap;">{{render(visual.display)}}</p>
+      </div>
+    </ng-container>
   </div>
 
 </div>

@@ -29,7 +29,7 @@ export class MilobellaService {
         } else {
           throwError(err);
         }
-        return of({vocal: ''});
+        return of({vocal: '', visu: []});
       })
     );
   }
