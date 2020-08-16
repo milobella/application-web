@@ -7662,10 +7662,10 @@ single-spa-angular@4.3.1:
   resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-4.3.1.tgz#cdd66d86c7fbe224b108e06e45a837d08ad98bc7"
   integrity sha512-7DOEsKl4cK/W4Vd2UBcYcJmOYLLJ44+DNfMPDPWwdz6rF5a30V6hwNoEwdZ7SmhYbXtwd90/E8FDOji90cSwng==
 
-single-spa@4.4.4:
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-4.4.4.tgz#b43c7677e0fedc719c1b284d4e0a35b6e40f52e2"
-  integrity sha512-0+eiZXHeTbVs7eOaVxOyQbLTRnbabfGT8BkCZ8BFY6CrqozlQebmXf5CS2moQ/xZTAJr0qREo7ggfvycFkLLqA==
+single-spa@5.5.5:
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.5.5.tgz#77a947516874d50b1e1a43aa6c316b550605d4fb"
+  integrity sha512-10YHGwETkAT6k9dkOTClig2h/R6yA5qvLdvk6i7Z4/PK8A2iD/pVvYKIud0aZVA69OzO1lrQOHB4VgT4t8/kXw==
 
 slash@^3.0.0:
   version "3.0.0"
