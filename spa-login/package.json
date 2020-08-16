@@ -27,7 +27,7 @@
     "single-spa": "4.4.4",
     "tslib": "2.0.1",
     "zone.js": "0.10.3",
-    "@auth0/angular-jwt": "4.2.0"
+    "@auth0/angular-jwt": "5.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.1000.6",
