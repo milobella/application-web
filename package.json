@@ -1,0 +1,59 @@
+{
+  "name": "milobella-website",
+  "version": "0.0.0",
+  "description": "The website of Milobella application",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milobella/application-web.git"
+  },
+  "keywords": [
+    "milobella",
+    "single-spa",
+    "micro-frontend"
+  ],
+  "author": "Célian GARCIA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milobella/application-web/issues"
+  },
+  "homepage": "https://github.com/milobella/application-web#readme",
+  "private": true,
+  "scripts": {
+    "// - INSTALLS": "Install packages for apps of the website",
+    "install:website:portal": "yarn --cwd portal install",
+    "install:website:spa-abilities": "yarn --cwd spa-abilities install",
+    "install:website:spa-login": "yarn --cwd spa-login install",
+    "install:website:spa-menu": "yarn --cwd spa-menu install",
+    "install:website:spa-nlg": "yarn --cwd spa-nlg install",
+    "install:website:spa-try-it": "yarn --cwd spa-try-it install",
+    "install:website": "run-s install:website:*",
+    "// - BUILDS": "Build apps of the website #requires yarn install:website",
+    "build:website:portal": "yarn --cwd portal build",
+    "build:website:spa-abilities": "yarn --cwd spa-abilities build",
+    "build:website:spa-login": "yarn --cwd spa-login build",
+    "build:website:spa-menu": "yarn --cwd spa-menu build",
+    "build:website:spa-nlg": "yarn --cwd spa-nlg build",
+    "build:website:spa-try-it": "yarn --cwd spa-try-it build",
+    "build:website": "run-s build:website:*",
+    "// - STARTS": "Serve apps of the website #requires yarn build:website",
+    "start:website:portal": "run-s wait:website:* && yarn --cwd portal start",
+    "start:website:spa-abilities": "serve spa-abilities/dist -s -l 4204 --cors",
+    "start:website:spa-login": "serve spa-login/dist -s -l 4203 --cors",
+    "start:website:spa-menu": "serve spa-menu/dist -s -l 4201 --cors",
+    "start:website:spa-nlg": "serve spa-nlg/dist -s -l 4205 --cors",
+    "start:website:spa-try-it": "serve spa-try-it/dist -s -l 4202 --cors",
+    "start:website": "concurrently -n w: yarn:start:website:*",
+    "// - WAIT UTILS": "Wait for apps to be up and running before running portal",
+    "wait:website:spa-abilities": "wait-on tcp:4204",
+    "wait:website:spa-login": "wait-on tcp:4203",
+    "wait:website:spa-menu": "wait-on tcp:4201",
+    "wait:website:spa-nlg": "wait-on tcp:4205",
+    "wait:website:spa-try-it": "wait-on tcp:4202"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "npm-run-all": "^4.1.5",
+    "serve": "^11.3.0",
+    "wait-on": "^5.2.0"
+  }
+}

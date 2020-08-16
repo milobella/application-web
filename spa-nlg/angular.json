@@ -3,19 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "menu": {
+    "spa-nlg": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "menu",
+      "prefix": "nlg",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/menu",
+            "outputPath": "dist/nlg",
             "index": "src/index.html",
-            "main": "src/main.single-spa.ts",
+            "main": "src\\main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
@@ -23,16 +27,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "allowedCommonJsDependencies": [
-              "single-spa-angular/internals"
-            ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.js"
+              "path": "extra-webpack.config.js",
+              "libraryName": "spa-nlg",
+              "libraryTarget": "umd"
             }
           },
           "configurations": {
@@ -44,11 +46,10 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "none",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -57,6 +58,11 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -65,18 +71,18 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "menu:build"
+            "browserTarget": "spa-nlg:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "menu:build:production"
+              "browserTarget": "spa-nlg:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "menu:build"
+            "browserTarget": "spa-nlg:build"
           }
         },
         "test": {
@@ -91,7 +97,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -113,15 +119,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "menu:serve"
+            "devServerTarget": "spa-nlg:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "menu:serve:production"
+              "devServerTarget": "spa-nlg:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "menu"
+    }
+  },
+  "defaultProject": "spa-nlg"
 }

@@ -16,14 +16,13 @@ are all prefixed by `spa-` in the repositories :
 - [spa-menu](#spa-menu): Menu of the website
 - [spa-try-it](#spa-try-it): interface to speak with Milobella
 - [spa-abilities](#spa-abilities): management of abilities configuration
-- [spa-nlu-management](#spa-nlu-management): interface to manage text understanding models
-- [spa-nlg-management](#spa-nlg-management): interface to manage text generation models
+- [spa-nlg](#spa-nlg): interface to manage text generation models
 
 >
 > In coming:
-> - spa-tts-configuration : to configure the Text To Speech
-> - spa-stt-configuration : to configure the Speech To Text
->
+> - spa-nlu : to manage text understanding models
+> - spa-tts : to configure the Text To Speech
+> - spa-stt : to configure the Speech To Text
 
 ## Micro-frontends
 ##### Portal
@@ -58,16 +57,8 @@ It makes CRUD actions on Abilities' configurations.
 
 > More details here : [spa-abilities](spa-abilities).
 
-##### SPA NLU Management
-``spa-nlu-management`` is the module of Natural Language Understanding.
-It will contain the sentences which permits to train the understanding model.
-
-We can write a text, categorize it and tag some important words or group of words in the sentence.
-
-> More details here : [spa-nlu-management](spa-nlu-management).
-
-##### SPA NLG Management
-``spa-nlg-management`` is the module of Natural Language Generation.
+##### SPA NLG
+``spa-nlg`` is the module of Natural Language Generation.
 It allows us to modify the sentences that Milobella can produce in all languages.
 
 On the left we have a very detailed robotic sentence produced by Milobella.
@@ -75,13 +66,16 @@ On the left we have a very detailed robotic sentence produced by Milobella.
 On the right we give some "translations" in real life words. We can add one or more sentences by robotic ones, and by
 language.
 
-> More details here : [spa-nlg-management](spa-nlg-management).
+> More details here : [spa-nlg](spa-nlg).
 
-##### SPA STT Configuration
+##### SPA NLU
+> In construction
+>
+##### SPA STT
 > In construction
 
-##### SPA TTS Configuration
+##### SPA TTS
 > In construction
 
 ## More documentation
-Go to https://github.com/CanopyTax/single-spa-angular to learn how all of this works.
+Go to https://single-spa.js.org/docs/ecosystem-angular/ to learn how all of this works.
