@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "10.0.9",
     "@angular/router": "10.0.9",
     "bootstrap": "4.5.2",
-    "rxjs": "6.6.0",
+    "rxjs": "6.6.2",
     "single-spa-angular": "4.3.1",
     "single-spa": "5.5.4",
     "tslib": "2.0.1",
