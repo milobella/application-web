@@ -27,7 +27,7 @@ module.exports = merge(common, {
       },
       '/users/authenticate': {
         target: 'https://milobella.com:10443',
-        secure: false,
+        secure: true,
         changeOrigin: true
       },
     }
