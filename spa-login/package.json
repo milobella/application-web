@@ -25,7 +25,7 @@
     "rxjs": "6.6.0",
     "single-spa-angular": "4.3.1",
     "single-spa": "4.4.4",
-    "tslib": "2.0.0",
+    "tslib": "2.0.1",
     "zone.js": "0.10.3",
     "@auth0/angular-jwt": "4.2.0"
   },
