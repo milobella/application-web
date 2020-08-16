@@ -51,9 +51,9 @@
     "wait:website:spa-try-it": "wait-on tcp:4202"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "npm-run-all": "^4.1.5",
-    "serve": "^11.3.0",
-    "wait-on": "^5.2.0"
+    "concurrently": "5.3.0",
+    "npm-run-all": "4.1.5",
+    "serve": "11.3.2",
+    "wait-on": "5.2.0"
   }
 }
