@@ -9,12 +9,12 @@
   "author": "Célian GARCIA",
   "license": "MIT",
   "devDependencies": {
-    "html-webpack-plugin": "^3.2.0",
-    "serve": "^11.1.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2"
+    "html-webpack-plugin": "3.2.0",
+    "serve": "11.3.2",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0",
+    "webpack-merge": "4.2.2"
   },
   "dependencies": {}
 }
