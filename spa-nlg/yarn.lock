@@ -7506,10 +7506,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-single-spa-angular@4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-4.3.1.tgz#cdd66d86c7fbe224b108e06e45a837d08ad98bc7"
-  integrity sha512-7DOEsKl4cK/W4Vd2UBcYcJmOYLLJ44+DNfMPDPWwdz6rF5a30V6hwNoEwdZ7SmhYbXtwd90/E8FDOji90cSwng==
+single-spa-angular@4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-4.3.2.tgz#969528236f3f034765df29a7f0ec556bfcf22a32"
+  integrity sha512-TVQLxuzzSTwwiWluNepRxTws/O1/d2o71XsypjecHfQg4QOa6sHgfNIj0mSxxSvfDbJHhtgAjW0R/QEOfMI13A==
 
 single-spa@5.5.5:
   version "5.5.5"
