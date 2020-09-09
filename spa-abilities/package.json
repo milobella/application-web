@@ -14,7 +14,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-builders/custom-webpack": "10.0.0",
+    "@angular-builders/custom-webpack": "10.0.1",
     "@angular/animations": "10.1.0",
     "@angular/common": "10.1.0",
     "@angular/compiler": "10.1.0",
