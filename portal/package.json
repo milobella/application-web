@@ -11,7 +11,7 @@
   "devDependencies": {
     "html-webpack-plugin": "4.4.1",
     "serve": "11.3.2",
-    "webpack": "4.44.1",
+    "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
     "webpack-merge": "5.1.4"
