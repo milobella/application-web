@@ -1,20 +1,24 @@
 {
   "name": "milobella-portal",
   "description": "The single-spa root config for Milobella website",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
-  },
+  "version": "0.0.0",
   "author": "Célian GARCIA",
   "license": "MIT",
-  "devDependencies": {
-    "html-webpack-plugin": "4.5.0",
-    "serve": "11.3.2",
-    "webpack": "4.44.2",
-    "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0",
-    "webpack-merge": "5.1.4"
+  "scripts": {
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "prebuild:prod": "rm -rf dist",
+    "build:prod": "webpack --config webpack.prod.js"
   },
-  "dependencies": {}
+  "dependencies": {
+    "single-spa": "^5.7.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.0.4",
+    "ts-loader": "^6.2.2",
+    "typescript": "^4.0.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "5.1.4"
+  }
 }

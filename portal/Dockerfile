@@ -7,7 +7,7 @@ FROM node as builder
 
 COPY . /src
 WORKDIR /src
-RUN yarn install && yarn run build
+RUN yarn install && yarn run build:prod
 
 ########################################################################
 

@@ -20,7 +20,7 @@
             "allowedCommonJsDependencies": [
               "single-spa-angular/internals"
             ],
-            "outputPath": "dist/login",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -35,7 +35,9 @@
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.js"
+              "path": "./extra-webpack.config.js",
+              "libraryName": "login",
+              "libraryTarget": "umd"
             }
           },
           "configurations": {
