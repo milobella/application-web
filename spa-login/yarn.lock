@@ -8269,10 +8269,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-single-spa-angular@4.4.3:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-4.4.3.tgz#63247083718672342f5a0ffd26250639bf02705e"
-  integrity sha512-rIlMkRgDc8v46st4HnqYi4jA+BbT5avtsZZ/Zw2IMxB28Mr4wFcLRed7/on4hnTsq2ytoUNfoNxISG+7J3f6KQ==
+single-spa-angular@4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-4.5.0.tgz#6b47387bfcb9eb5a815a0d273767c7157c6ef015"
+  integrity sha512-bRN3ShFxmWLf3lYxoMHjmrj8XSpdG9Enfy3vbCYvtXIk+Jg/jTCPXvrZIC3J9FHMU+ykDXbV0Xl1YyDR4+tJ9A==
   dependencies:
     tslib "^2.0.0"
 
