@@ -1,21 +1,23 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, '.'),
-  entry: {
-    app: './index.js',
-  },
+  entry: './src/main.ts',
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: 'portal.js',
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: 'index.html',
-    })
-  ]
+  resolve: {
+    extensions: ['.js', '.ts'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+      },
+    ],
+  },
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
 };

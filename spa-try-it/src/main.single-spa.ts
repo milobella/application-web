@@ -1,11 +1,10 @@
-
 import { enableProdMode, NgZone } from '@angular/core';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import { singleSpaAngular, getSingleSpaExtraProviders } from 'single-spa-angular';
+import { getSingleSpaExtraProviders, singleSpaAngular } from 'single-spa-angular';
 import { singleSpaPropsSubject } from './single-spa/single-spa-props';
 
 if (environment.production) {
@@ -19,7 +18,7 @@ const lifecycles = singleSpaAngular({
   },
   template: '<app-try-it-root />',
   Router,
-  NgZone
+  NgZone,
 });
 
 export const bootstrap = lifecycles.bootstrap;
