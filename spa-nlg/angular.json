@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/nlg",
             "index": "src/index.html",
             "main": "src\\main.single-spa.ts",
             "polyfills": "src/polyfills.ts",

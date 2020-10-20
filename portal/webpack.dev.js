@@ -30,6 +30,36 @@ module.exports = merge(common, {
         secure: true,
         changeOrigin: true
       },
+      '/spa/menu': {
+        target: 'http://localhost:4201',
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: {"^/spa" : ""}
+      },
+      '/spa/try-it': {
+        target: 'http://localhost:4202',
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: {"^/spa" : ""}
+      },
+      '/spa/login': {
+        target: 'http://localhost:4203',
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: {"^/spa" : ""}
+      },
+      '/spa/abilities': {
+        target: 'http://localhost:4204',
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: {"^/spa" : ""}
+      },
+      '/spa/nlg': {
+        target: 'http://localhost:4205',
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: {"^/spa" : ""}
+      },
     }
   },
 });

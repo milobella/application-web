@@ -20,7 +20,7 @@
             "allowedCommonJsDependencies": [
               "single-spa-angular/internals"
             ],
-            "outputPath": "dist",
+            "outputPath": "dist/login",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
