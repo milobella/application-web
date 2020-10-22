@@ -13,7 +13,7 @@
     "single-spa": "5.8.0"
   },
   "devDependencies": {
-    "html-webpack-plugin": "4.0.4",
+    "html-webpack-plugin": "4.5.0",
     "process": "0.11.10",
     "ts-loader": "8.0.6",
     "typescript": "4.0.3",
