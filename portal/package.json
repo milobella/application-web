@@ -10,7 +10,8 @@
     "build:prod": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "single-spa": "5.8.1"
+    "single-spa": "5.8.1",
+    "single-spa-layout": "1.1.2"
   },
   "devDependencies": {
     "html-webpack-plugin": "4.5.0",

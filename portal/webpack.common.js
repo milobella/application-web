@@ -22,6 +22,14 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin({
+      // Options...
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        libraryTarget: "umd"
+      }
+    }),
     new HtmlWebpackPlugin({ template: './src/index.html'}),
     new webpack.ProvidePlugin({
       process: 'process/browser',
