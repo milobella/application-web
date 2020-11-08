@@ -9,24 +9,41 @@
     <script src="https://unpkg.com/zone.js@0.11.1"></script>
     <template id="single-spa-layout">
         <single-spa-router>
-            <route path="" default>
+            <route path="login">
+                <application name="@milobella/login"></application>
+            </route>
+
+            <route default>
                 <nav class="topnav">
                     <application name="@milobella/menu"></application>
                 </nav>
                 <div class="main-content">
-                    <route path="spa-try-it">
-                        <application name="@milobella/try-it"></application>
-                    </route>
-                    <route path="spa-abilities">
-                        <application name="@milobella/abilities"></application>
-                    </route>
-                    <route path="spa-nlg">
-                        <application name="@milobella/nlg"></application>
-                    </route>
+                    <application name="@milobella/try-it"></application>
                 </div>
             </route>
-            <route path="login">
-                <application name="@milobella/login"></application>
+            <route path="try-it">
+                <nav class="topnav">
+                    <application name="@milobella/menu"></application>
+                </nav>
+                <div class="main-content">
+                    <application name="@milobella/try-it"></application>
+                </div>
+            </route>
+            <route path="abilities">
+                <nav class="topnav">
+                    <application name="@milobella/menu"></application>
+                </nav>
+                <div class="main-content">
+                    <application name="@milobella/abilities"></application>
+                </div>
+            </route>
+            <route path="nlg">
+                <nav class="topnav">
+                    <application name="@milobella/menu"></application>
+                </nav>
+                <div class="main-content">
+                    <application name="@milobella/nlg"></application>
+                </div>
             </route>
         </single-spa-router>
     </template>
