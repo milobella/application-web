@@ -7,6 +7,46 @@
 
     <link rel="preload" href="https://unpkg.com/zone.js@0.11.1" as="script"/>
     <script src="https://unpkg.com/zone.js@0.11.1"></script>
+    <template id="single-spa-layout">
+        <single-spa-router>
+            <route path="login">
+                <application name="@milobella/login"></application>
+            </route>
+
+            <route default>
+                <nav class="topnav">
+                    <application name="@milobella/menu"></application>
+                </nav>
+                <div class="main-content">
+                    <application name="@milobella/try-it"></application>
+                </div>
+            </route>
+            <route path="try-it">
+                <nav class="topnav">
+                    <application name="@milobella/menu"></application>
+                </nav>
+                <div class="main-content">
+                    <application name="@milobella/try-it"></application>
+                </div>
+            </route>
+            <route path="abilities">
+                <nav class="topnav">
+                    <application name="@milobella/menu"></application>
+                </nav>
+                <div class="main-content">
+                    <application name="@milobella/abilities"></application>
+                </div>
+            </route>
+            <route path="nlg">
+                <nav class="topnav">
+                    <application name="@milobella/menu"></application>
+                </nav>
+                <div class="main-content">
+                    <application name="@milobella/nlg"></application>
+                </div>
+            </route>
+        </single-spa-router>
+    </template>
 </head>
 <body>
 </body>
