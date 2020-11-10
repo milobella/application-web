@@ -8305,10 +8305,10 @@ single-spa-angular@4.6.0:
   dependencies:
     tslib "^2.0.0"
 
-single-spa@5.8.1:
-  version "5.8.1"
-  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.8.1.tgz#86c2575e297e31d8f06945944ec97e31851a59ae"
-  integrity sha512-RlyLZ1IDIPdzI6mQPzCQnlgTt9jmbAXBZODmifoDut840wksPDSPhcSS8jXMpuUlqOidQiX2YuLVQSR9DEgsXw==
+single-spa@5.8.2:
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.8.2.tgz#e5b816612d61e6750dec79d42bc992c6f8c0db34"
+  integrity sha512-Rz9hY3/Trm6HdXiyhIUikIiEZBqUQCxov4jwecFGATbTRMZHoTDWf211PFrUs0s7QdIDThyMQmizamULkibSAA==
 
 slash@^3.0.0:
   version "3.0.0"
