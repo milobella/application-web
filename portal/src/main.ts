@@ -7,10 +7,10 @@ import { loadAngularScript } from './loaders';
 const spaPathPrefix = "/spa"
 const APPLICATIONS_URLS = {
   "@milobella/menu": spaPathPrefix + '/menu',
+  "@milobella/login": spaPathPrefix + '/login',
+  "@milobella/abilities": spaPathPrefix + '/abilities',
   "@milobella/try-it": spaPathPrefix + '/try-it',
   "@milobella/nlg": spaPathPrefix + '/nlg',
-  "@milobella/abilities": spaPathPrefix + '/abilities',
-  "@milobella/login": spaPathPrefix + '/login',
 }
 
 const element = document.querySelector('#single-spa-layout')

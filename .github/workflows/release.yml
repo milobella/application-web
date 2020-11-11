@@ -1,0 +1,77 @@
+name: Release website components
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release-website-portal:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: milobella/portal
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Login to docker hub
+        if: success()
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build image
+        if: success()
+        run: |
+          docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest .
+
+      - name: Push version to docker registry
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push ${IMAGE_NAME}:${IMAGE_TAG}
+
+      - name: Push latest to docker registry
+        if: success()
+        uses: actions-hub/docker@master
+        with:
+          args: push ${IMAGE_NAME}:latest
+
+  release-website-apps:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        component: ["menu", "login", "try-it", "abilities", "nlg"]
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Login to docker hub
+        if: success()
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build image
+        if: success()
+        env:
+          APPLICATION_NAME: ${{ matrix.component }}
+          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+        run: |
+          cd angular/
+          docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest --build-arg APPLICATION_NAME .
+
+      - name: Push version to docker registry
+        if: success()
+        env:
+          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+        uses: actions-hub/docker@master
+        with:
+          args: push ${IMAGE_NAME}:${IMAGE_TAG}
+
+      - name: Push latest to docker registry
+        if: success()
+        env:
+          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+        uses: actions-hub/docker@master
+        with:
+          args: push ${IMAGE_NAME}:latest

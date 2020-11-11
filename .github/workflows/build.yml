@@ -1,4 +1,4 @@
-name: Build
+name: Build website components
 on:
   # Trigger the workflow on push or pull request,
   # but only for the master branch
@@ -10,16 +10,32 @@ on:
       - master
 
 jobs:
-  build:
+  build-website-portal:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        component: ["portal", "spa-menu", "spa-login", "spa-try-it", "spa-abilities", "spa-nlg"]
+    env:
+      IMAGE_NAME: milobella/portal
     steps:
       - uses: actions/checkout@master
 
       - name: Build image
         if: success()
         run: |
-          cd ${{ matrix.component }}
-          docker build -t milobella/${{ matrix.component }}:dev .
+          cd portal
+          docker build -t ${IMAGE_NAME}:dev .
+
+  build-website-apps:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        component: ["menu", "login", "try-it", "abilities", "nlg"]
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Build image
+        if: success()
+        env:
+          APPLICATION_NAME: ${{ matrix.component }}
+          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+        run: |
+          cd angular
+          docker build -t ${IMAGE_NAME}:dev --build-arg APPLICATION_NAME .

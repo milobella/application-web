@@ -12,7 +12,7 @@ export function loadAngularScript(url: string): Promise<void> {
   return new Promise((resolve, reject) => {
     const moduleScript = createScriptElement(resolve, reject);
     moduleScript.type = 'module';
-    moduleScript.src = `${url}/main-es2015.js`;
+    moduleScript.src = `${url}/main.js`;
 
     const noModuleScript = createScriptElement(resolve, reject);
     noModuleScript.noModule = true;
