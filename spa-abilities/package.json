@@ -30,7 +30,7 @@
     "pixi.js": "5.3.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.1002.0",
+    "@angular-devkit/build-angular": "0.1100.1",
     "@angular/cli": "10.2.0",
     "@angular/compiler-cli": "10.2.3",
     "@types/node": "12.19.3",
