@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "single-spa": "5.8.2",
-    "single-spa-layout": "1.1.5"
+    "single-spa-layout": "1.1.6"
   },
   "devDependencies": {
     "html-webpack-plugin": "4.5.0",
