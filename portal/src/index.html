@@ -9,10 +9,6 @@
     <script src="https://unpkg.com/zone.js@0.11.1"></script>
     <template id="single-spa-layout">
         <single-spa-router>
-            <route path="login">
-                <application name="@milobella/login"></application>
-            </route>
-
             <route default>
                 <nav class="topnav">
                     <application name="@milobella/menu"></application>
@@ -20,6 +16,9 @@
                 <div class="main-content">
                     <application name="@milobella/try-it"></application>
                 </div>
+            </route>
+            <route path="login">
+                <application name="@milobella/login"></application>
             </route>
             <route path="try-it">
                 <nav class="topnav">

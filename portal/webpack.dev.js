@@ -31,34 +31,34 @@ module.exports = merge(common, {
         changeOrigin: true
       },
       '/spa/menu': {
+        target: 'http://localhost:4200',
+        secure: true,
+        changeOrigin: true,
+        pathRewrite: {"^/spa/menu" : ""}
+      },
+      '/spa/login': {
         target: 'http://localhost:4201',
         secure: true,
         changeOrigin: true,
-        pathRewrite: {"^/spa" : ""}
+        pathRewrite: {"^/spa/login" : ""}
       },
       '/spa/try-it': {
         target: 'http://localhost:4202',
         secure: true,
         changeOrigin: true,
-        pathRewrite: {"^/spa" : ""}
+        pathRewrite: {"^/spa/try-it" : ""}
       },
-      '/spa/login': {
+      '/spa/abilities': {
         target: 'http://localhost:4203',
         secure: true,
         changeOrigin: true,
-        pathRewrite: {"^/spa" : ""}
+        pathRewrite: {"^/spa/abilities" : ""}
       },
-      '/spa/abilities': {
+      '/spa/nlg': {
         target: 'http://localhost:4204',
         secure: true,
         changeOrigin: true,
-        pathRewrite: {"^/spa" : ""}
-      },
-      '/spa/nlg': {
-        target: 'http://localhost:4205',
-        secure: true,
-        changeOrigin: true,
-        pathRewrite: {"^/spa" : ""}
+        pathRewrite: {"^/spa/nlg" : ""}
       },
     }
   },
