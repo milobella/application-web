@@ -12,8 +12,8 @@
   "dependencies": {
     "single-spa": "5.8.2",
     "single-spa-layout": "1.1.6",
-    "@types/sinonjs__fake-timers": "^6.0.2",
-    "@types/sizzle": "^2.3.2"
+    "@types/sinonjs__fake-timers": "6.0.2",
+    "@types/sizzle": "2.3.2"
   },
   "devDependencies": {
     "html-webpack-plugin": "4.5.0",
