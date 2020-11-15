@@ -8,7 +8,7 @@ jobs:
   release-website-portal:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: milobella/portal
+      APP_IMAGE_NAME: milobella/portal
     steps:
       - uses: actions/checkout@master
 
@@ -22,19 +22,19 @@ jobs:
       - name: Build image
         if: success()
         run: |
-          docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest .
+          docker build -t ${APP_IMAGE_NAME}:${IMAGE_TAG} -t ${APP_IMAGE_NAME}:latest .
 
       - name: Push version to docker registry
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push ${IMAGE_NAME}:${IMAGE_TAG}
+          args: push ${APP_IMAGE_NAME}:${IMAGE_TAG}
 
       - name: Push latest to docker registry
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push ${IMAGE_NAME}:latest
+          args: push ${APP_IMAGE_NAME}:latest
 
   release-website-apps:
     runs-on: ubuntu-latest
@@ -55,23 +55,23 @@ jobs:
         if: success()
         env:
           APPLICATION_NAME: ${{ matrix.component }}
-          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+          APP_IMAGE_NAME: milobella/website-app-${{ matrix.component }}
         run: |
           cd angular/
-          docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest --build-arg APPLICATION_NAME .
+          docker build -t ${APP_IMAGE_NAME}:${IMAGE_TAG} -t ${APP_IMAGE_NAME}:latest --build-arg APPLICATION_NAME .
 
       - name: Push version to docker registry
         if: success()
         env:
-          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+          APP_IMAGE_NAME: milobella/website-app-${{ matrix.component }}
         uses: actions-hub/docker@master
         with:
-          args: push ${IMAGE_NAME}:${IMAGE_TAG}
+          args: push ${APP_IMAGE_NAME}:${IMAGE_TAG}
 
       - name: Push latest to docker registry
         if: success()
         env:
-          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+          APP_IMAGE_NAME: milobella/website-app-${{ matrix.component }}
         uses: actions-hub/docker@master
         with:
-          args: push ${IMAGE_NAME}:latest
+          args: push ${APP_IMAGE_NAME}:latest

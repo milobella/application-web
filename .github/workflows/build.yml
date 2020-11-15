@@ -13,7 +13,7 @@ jobs:
   build-website-portal:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: milobella/portal
+      APP_IMAGE_NAME: milobella/portal
     steps:
       - uses: actions/checkout@master
 
@@ -21,7 +21,7 @@ jobs:
         if: success()
         run: |
           cd portal
-          docker build -t ${IMAGE_NAME}:dev .
+          docker build -t ${APP_IMAGE_NAME}:dev .
 
   build-website-apps:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
         if: success()
         env:
           APPLICATION_NAME: ${{ matrix.component }}
-          IMAGE_NAME: milobella/website-app-${{ matrix.component }}
+          APP_IMAGE_NAME: milobella/website-app-${{ matrix.component }}
         run: |
           cd angular
-          docker build -t ${IMAGE_NAME}:dev --build-arg APPLICATION_NAME .
+          docker build -t ${APP_IMAGE_NAME}:dev --build-arg APPLICATION_NAME .
