@@ -22,6 +22,7 @@ jobs:
       - name: Build image
         if: success()
         run: |
+          cd portal
           docker build -t ${APP_IMAGE_NAME}:${IMAGE_TAG} -t ${APP_IMAGE_NAME}:latest .
 
       - name: Push version to docker registry
@@ -57,7 +58,7 @@ jobs:
           APPLICATION_NAME: ${{ matrix.component }}
           APP_IMAGE_NAME: milobella/website-app-${{ matrix.component }}
         run: |
-          cd angular/
+          cd angular
           docker build -t ${APP_IMAGE_NAME}:${IMAGE_TAG} -t ${APP_IMAGE_NAME}:latest --build-arg APPLICATION_NAME .
 
       - name: Push version to docker registry
