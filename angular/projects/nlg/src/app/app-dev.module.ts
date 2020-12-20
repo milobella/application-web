@@ -22,6 +22,9 @@ import { SentencesListComponent } from './sentences-list/sentences-list.componen
     HttpClientModule
   ],
   providers: [],
+  exports: [
+    SentencesListComponent
+  ],
   bootstrap: [AppDevComponent]
 })
 export class AppDevModule {
