@@ -37,7 +37,7 @@
     "single-spa-angular": "4.8.0",
     "tslib": "2.0.3",
     "zone.js": "0.11.3",
-    "pixi.js": "5.3.3"
+    "pixi.js": "5.3.5"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "10.0.1",
