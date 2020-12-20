@@ -19,7 +19,8 @@
     "build:single-spa:abilities": "ng build abilities --prod --deploy-url http://localhost:4203/",
     "serve:single-spa:abilities": "ng s --project abilities --disable-host-check --port 4203 --deploy-url http://localhost:4203/ --live-reload false",
     "build:single-spa:nlg": "ng build nlg --prod --deploy-url http://localhost:4204/",
-    "serve:single-spa:nlg": "ng s --project nlg --disable-host-check --port 4204 --deploy-url http://localhost:4204/ --live-reload false"
+    "serve:single-spa:nlg": "ng s --project nlg --disable-host-check --port 4204 --deploy-url http://localhost:4204/ --live-reload false",
+    "serve:dev:nlg": "ng s --project nlg --configuration=development --port 4204"
   },
   "private": true,
   "dependencies": {

@@ -1,19 +1,17 @@
 import { AppDevComponent } from './app-dev.component';
-import { AssetUrlPipe } from './pipes/asset-url.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
 import { NgModule } from '@angular/core';
 import { AppDevRoutingModule } from './app-dev-routing.module';
 import { AuthenticationModule } from '../../../milobella/authentication/src/lib/authentication.module';
+import { SentencesListComponent } from './sentences-list/sentences-list.component';
 
 @NgModule({
   declarations: [
     AppDevComponent,
-    HeaderComponent,
-    AssetUrlPipe
+    SentencesListComponent
   ],
   imports: [
     BrowserModule,

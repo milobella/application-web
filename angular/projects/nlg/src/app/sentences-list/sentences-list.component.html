@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="list-group" *ngIf="sentences">
+    <div class="list-group-item" *ngFor="let sentence of sentences | keyvalue">
+      <div class="row">
+        <div class="col-sm">
+          {{sentence.key}}
+        </div>
+        <div class="col-sm">
+          <div *ngIf="sentence.value">
+            <div *ngFor="let s of sentence.value">
+              {{s}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
