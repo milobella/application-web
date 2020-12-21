@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:menu": "ng build menu --prod --deploy-url https://milobella.com:10443/",
+    "build:single-spa:menu": "ng build menu --prod --deploy-url https://milobella.com:10443/spa/menu",
     "serve:single-spa:menu": "ng s --project menu --disable-host-check --port 4200 --deploy-url http://localhost:4200/ --live-reload false",
     "serve:dev:menu": "ng s --project menu --configuration=development --port 4200",
     "build:single-spa:login": "ng build login --prod --deploy-url https://milobella.com:10443/",
