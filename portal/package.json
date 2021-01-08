@@ -10,7 +10,7 @@
     "build:prod": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "single-spa": "5.8.3",
+    "single-spa": "5.9.0",
     "single-spa-layout": "1.2.1",
     "@types/sinonjs__fake-timers": "6.0.2",
     "@types/sizzle": "2.3.2"

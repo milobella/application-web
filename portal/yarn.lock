@@ -1308,10 +1308,10 @@ single-spa-layout@1.2.1:
     merge2 "^1.4.1"
     parse5 "^6.0.1"
 
-single-spa@5.8.3:
-  version "5.8.3"
-  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.8.3.tgz#e2483bfc0c2f1b38c1869c73cbbae4e9bba39730"
-  integrity sha512-OpNJJWLEFub3EMA2WepGIHUYL4+WjyrdAsQdjjQjfIxuJjbe5nLMVmRQT2rSG20Q73TlkSo/i0vZQm3JyAPBiQ==
+single-spa@5.9.0:
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.9.0.tgz#e0ca2864c2e0f6917286a5d6b70c507f8f5fc840"
+  integrity sha512-GhOceK36ruH8hhGFR7o3kkbrhoRG0m8/Ygsr16/qJ60El5OSz2WCYL4BFvX9nHwH2jpzgCqgoOWH9O5+So2dvQ==
 
 source-list-map@^2.0.1:
   version "2.0.1"
