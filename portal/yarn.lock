@@ -1301,10 +1301,10 @@ single-spa-layout@1.4.0:
     merge2 "^1.4.1"
     parse5 "^6.0.1"
 
-single-spa@5.9.0:
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.9.0.tgz#e0ca2864c2e0f6917286a5d6b70c507f8f5fc840"
-  integrity sha512-GhOceK36ruH8hhGFR7o3kkbrhoRG0m8/Ygsr16/qJ60El5OSz2WCYL4BFvX9nHwH2jpzgCqgoOWH9O5+So2dvQ==
+single-spa@5.9.1:
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.9.1.tgz#ecdc1e05a35b5d2b3cc18d46df75f2459f781ceb"
+  integrity sha512-RaIRLShmw5g8D5tYhZLT6qRJIc/33eAGhlM93HY3v/UWLQ9lq6bRhou3W8DPKYmwKV35IINbRYX36LlPbY1Jvg==
 
 source-list-map@^2.0.1:
   version "2.0.1"
