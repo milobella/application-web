@@ -16,7 +16,7 @@
     "@types/sizzle": "2.3.2"
   },
   "devDependencies": {
-    "html-webpack-plugin": "5.1.0",
+    "html-webpack-plugin": "5.2.0",
     "process": "0.11.10",
     "ts-loader": "8.0.17",
     "typescript": "4.1.5",
