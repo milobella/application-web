@@ -9019,10 +9019,10 @@ single-spa-angular@4.9.2:
   dependencies:
     tslib "^2.0.0"
 
-single-spa@5.9.1:
-  version "5.9.1"
-  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.9.1.tgz#ecdc1e05a35b5d2b3cc18d46df75f2459f781ceb"
-  integrity sha512-RaIRLShmw5g8D5tYhZLT6qRJIc/33eAGhlM93HY3v/UWLQ9lq6bRhou3W8DPKYmwKV35IINbRYX36LlPbY1Jvg==
+single-spa@5.9.2:
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.9.2.tgz#4bb9a6eb6c90e3198b1549d8cdeb03241401b15b"
+  integrity sha512-XYl0rWAuTsdz8juLVMk7jjFZPIpv0TVECUh3+SNzReFJ8OfjndnUNvCSF6e5jAd7/8CNnKItpPgIsAvKvDvpHw==
 
 slash@^3.0.0:
   version "3.0.0"
