@@ -10,6 +10,6 @@ export class AppComponent {
   answer: MilobellaResponse;
 
   render(display: string): string {
-    return display.replace(/"/, '').replace(/"\s+$/, '').replace(/\\r\\n/g, '\r\n');
+    return display.replace(/^"(.+)"$/,'$1').replace(/\\r\\n/g, '\r\n');
   }
 }
