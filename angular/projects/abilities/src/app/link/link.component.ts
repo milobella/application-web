@@ -12,11 +12,10 @@ import {
 import { Outlet } from '../table/outlet.model';
 import { Application, Graphics } from 'pixi.js';
 
-
 const THICKNESS = 20; // In px
 
 @Component({
-  selector: 'abilities-link',
+  selector: 'app-abilities-link',
   templateUrl: './link.component.html',
   styleUrls: ['./link.component.scss']
 })
@@ -35,7 +34,6 @@ export class LinkComponent implements OnInit, OnDestroy, AfterViewInit {
     this._to = link.to;
 
     if (link.from && link.to) {
-      console.log(link.from.y);
       this.elementRef.nativeElement.style.left = this._from.x - THICKNESS + 'px';
       this.elementRef.nativeElement.style.top = Math.min(this._from.y, this._to.y) - THICKNESS + 'px';
       this.elementRef.nativeElement.style.width = this._to.x - this._from.x + (THICKNESS * 2) + 'px';

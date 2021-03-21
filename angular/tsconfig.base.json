@@ -8,6 +8,7 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "importHelpers": true,
     "target": "es2016",
     "module": "es2020",
@@ -19,6 +20,10 @@
       "@milobella/authentication": [
         "dist/milobella/authentication/milobella-authentication",
         "dist/milobella/authentication"
+      ],
+      // From https://github.com/pixijs/pixi.js/releases/tag/v6.0.0
+      "mini-signals": [
+        "node_modules/resource-loader/typings/mini-signals.d.ts"
       ]
     }
   }
