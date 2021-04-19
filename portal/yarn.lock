@@ -1029,10 +1029,10 @@ signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-single-spa-layout@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/single-spa-layout/-/single-spa-layout-1.5.0.tgz#ba45f76aeee85b873797fe793d0a5aebd3b82c15"
-  integrity sha512-zPfcmeWDrTF01NMCKEJmEaiWzNCYDft3BWhV68gfwQy9W9dowOpgwENPgO4KDFH2686Plyk2qXDaGuMFHjCT9Q==
+single-spa-layout@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/single-spa-layout/-/single-spa-layout-1.5.1.tgz#2d5e05392c97bc6306f5233b9fccdbb920cdc180"
+  integrity sha512-dGs2qux7nUvbmo2qExGlHyNU3AjZQCsMdjs6YYHsDSj/ttpSUQm8CecAyBrOzGYr/oPDlt9nPR3rSpzxeBhPgw==
   dependencies:
     "@types/parse5" "^5.0.3"
     merge2 "^1.4.1"
