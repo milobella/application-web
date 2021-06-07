@@ -9432,12 +9432,12 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-single-spa-angular@4.9.2:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-4.9.2.tgz#4b4e2d68661a2f17ce950d94d60a49e60a4ed52c"
-  integrity sha512-Hh28H/M+kPLbMTJ1JB73G1fdRyciztM7pP1neNMei+t7XCCDtNGMwOxMATRZf3jD0YDEQY5jxfudgXu8+6qQlA==
+single-spa-angular@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-5.0.1.tgz#63b6776730e7b91a23b3fc99a81784bb0d332820"
+  integrity sha512-ltPHhlWeK1nmEoDXDAYkFZFnUQ3iLaRLFgm9Jj7mGxKvFcRDvHSpIJtQOO00Pt3SiKKuv49+IOJ6o1xtYE+Agw==
   dependencies:
-    tslib "^2.0.0"
+    tslib "^2.1.0"
 
 single-spa@5.9.3:
   version "5.9.3"
@@ -10309,7 +10309,7 @@ tslib@2.1.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
-tslib@2.2.0:
+tslib@2.2.0, tslib@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
