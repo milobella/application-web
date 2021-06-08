@@ -5,12 +5,11 @@ ARG APPLICATION_NAME
 
 ########################################################################
 ### builder stage : Build the node application in /src/dist folder
-FROM node as builder
+FROM node:14 as builder
 ARG APPLICATION_NAME
 
 COPY . /src
 WORKDIR /src
-RUN echo $APPLICATION_NAME
 RUN yarn install && yarn run build:single-spa:$APPLICATION_NAME
 ########################################################################
 
