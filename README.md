@@ -60,10 +60,11 @@ It makes CRUD actions on Abilities' configurations.
 ``nlg`` is the app of Natural Language Generation.
 It allows us to modify the sentences that Milobella can produce in all languages.
 
-On the left we have a very detailed robotic sentence produced by Milobella.
+| On the left | On the right |
+| :--------------- | ---------------:|
+| We have a very detailed robotic sentence produced by Milobella.  | We give some "translations" in real life words. |
 
-On the right we give some "translations" in real life words. We can add one or more sentences by robotic ones, and by
-language.
+We can add one or more sentences by robotic ones, and by language.
 
 > More details here : [nlg](angular/projects/nlg).
 
