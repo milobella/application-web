@@ -3,5 +3,6 @@
     "config:base",
     "docker:disable"
   ],
-  "supportPolicy": ["lts_latest"]
+  "supportPolicy": ["lts_latest"],
+  "dependencyDashboard": true
 }
