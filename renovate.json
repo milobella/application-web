@@ -8,7 +8,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["typescript"],
-      "allowedVersions": "4.2.3"
+      "allowedVersions": ">=4.2.3 <4.3.0"
     }
   ]
 }
