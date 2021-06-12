@@ -4,5 +4,11 @@
     "docker:disable"
   ],
   "supportPolicy": ["lts_latest"],
-  "dependencyDashboard": true
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "4.2.3"
+    }
+  ]
 }
