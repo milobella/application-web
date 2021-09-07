@@ -33,7 +33,7 @@
     "@angular/platform-browser-dynamic": "12.2.4",
     "@angular/router": "12.2.4",
     "rxjs": "7.3.0",
-    "bootstrap": "5.1.0",
+    "bootstrap": "5.1.1",
     "single-spa": "5.9.3",
     "single-spa-angular": "5.0.2",
     "tslib": "2.3.1",
