@@ -53,10 +53,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.11.0.tgz#390ea202539c61c8fa6ba4428b57e05bc36dc47b"
   integrity sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
 
-"@types/parse5@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-5.0.3.tgz#e7b5aebbac150f8b5fdd4a46e7f0bd8e65e19109"
-  integrity sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==
+"@types/parse5@^6.0.0":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-6.0.1.tgz#f8ae4fbcd2b9ba4ff934698e28778961f9cb22ca"
+  integrity sha512-ARATsLdrGPUnaBvxLhUlnltcMgn7pQG312S8ccdYlnyijabrX9RN/KN/iGj9Am96CoW8e/K9628BA7Bv4XHdrA==
 
 "@types/sinonjs__fake-timers@6.0.4":
   version "6.0.4"
@@ -988,20 +988,25 @@ signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==
 
-single-spa-layout@1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/single-spa-layout/-/single-spa-layout-1.6.0.tgz#0cad8b691a2c0a0d494e64adae4bfa1143c6130c"
-  integrity sha512-gvsZN5Jhv9+6f3kiAhUXeOQBdcl1Ywrf7sEkcnYMd2u4rO+QxU34j/xc0V4Sy3evqXhwP9B7s2BCWUSMqqxzhQ==
+single-spa-layout@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/single-spa-layout/-/single-spa-layout-2.0.0.tgz#cfd7a90266e9b16ca1ef7c2f1785f3117bd7db60"
+  integrity sha512-6vT1NSGXOSvT6I5A4kWQQZss5feaSzx4cblMmPHEabjsbi5irkPe4evetxRdVcn0o0g+uscBRT6gKS0xKV+hMA==
   dependencies:
-    "@types/parse5" "^5.0.3"
+    "@types/parse5" "^6.0.0"
     merge2 "^1.4.1"
     parse5 "^6.0.1"
-    single-spa ">=5"
+    single-spa "^6.0.0-beta.1"
 
-single-spa@5.9.3, single-spa@>=5:
+single-spa@5.9.3:
   version "5.9.3"
   resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-5.9.3.tgz#2d151cbb3b273629a5b27b30a3b8ca847dcba4c5"
   integrity sha512-qMGraRzIBsodV6569Fob4cQ4/yQNrcZ5Achh3SAQDljmqUtjAZ7BAA7GAyO/l5eizb7GtTmVq9Di7ORyKw82CQ==
+
+single-spa@^6.0.0-beta.1:
+  version "6.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/single-spa/-/single-spa-6.0.0-beta.2.tgz#90bd3af89547bd9c24ad4dd8092b9fea2e27c530"
+  integrity sha512-h3DNJ5Fkcv5M0bFb/vu55qaUkCnySEUNhX3gi3Fd0Dohy4eNWbyoiyxsqOzqH8MslCBpwBJ761VfO1KnZSb7qA==
 
 source-map-support@~0.5.12:
   version "0.5.16"
