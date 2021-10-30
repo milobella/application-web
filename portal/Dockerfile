@@ -3,7 +3,7 @@
 
 ########################################################################
 ### builder stage : Build the node application in /src/dist folder
-FROM node as builder
+FROM node:lts as builder
 
 COPY . /src
 WORKDIR /src
