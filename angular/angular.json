@@ -28,18 +28,6 @@
             "tsConfig": "projects/milobella/authentication/tsconfig.spec.json",
             "karmaConfig": "projects/milobella/authentication/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/milobella/authentication/tsconfig.lib.json",
-              "projects/milobella/authentication/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
@@ -149,19 +137,6 @@
               "projects/menu/src/styles.css"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/menu/tsconfig.app.json",
-              "projects/menu/tsconfig.spec.json",
-              "projects/menu/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
@@ -273,19 +248,6 @@
             ],
             "scripts": []
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/login/tsconfig.app.json",
-              "projects/login/tsconfig.spec.json",
-              "projects/login/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
@@ -393,19 +355,6 @@
               "projects/abilities/src/styles.css"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/abilities/tsconfig.app.json",
-              "projects/abilities/tsconfig.spec.json",
-              "projects/abilities/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {
@@ -529,19 +478,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/nlg/tsconfig.app.json",
-              "projects/nlg/tsconfig.spec.json",
-              "projects/nlg/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -660,19 +596,6 @@
               "projects/try-it/src/styles.css"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/try-it/tsconfig.app.json",
-              "projects/try-it/tsconfig.spec.json",
-              "projects/try-it/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {
