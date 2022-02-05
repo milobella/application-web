@@ -9,6 +9,10 @@
     {
       "matchPackageNames": ["typescript"],
       "allowedVersions": ">=4.2.3 <4.3.0"
+    },
+    {
+      "matchPackageNames": ["angular"],
+      "allowedVersions": "<13.0.0"
     }
   ]
 }
