@@ -18,7 +18,7 @@ export class MilobellaService {
     if (!user || !user.token) {
       this.redirectToLogin();
     }
-    return this.http.post<MilobellaResponse>('talk/text', request, {
+    return this.http.post<MilobellaResponse>('api/v1/talk/text', request, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + user.token
       })
