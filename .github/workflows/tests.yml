@@ -24,7 +24,7 @@ jobs:
           config: baseUrl=https://milobella.com:10443
           env: MILOBELLA_USERNAME=${{ secrets.MILOBELLA_USERNAME }},MILOBELLA_PASSWORD=${{ secrets.MILOBELLA_PASSWORD }}
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
