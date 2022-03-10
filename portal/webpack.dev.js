@@ -6,7 +6,6 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     hot: true,
-    publicPath: '/',
     historyApiFallback: true,
     // Send API requests on localhost to API server get around CORS.
     proxy: {
