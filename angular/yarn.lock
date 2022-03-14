@@ -7709,10 +7709,10 @@ signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-single-spa-angular@6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-6.0.2.tgz#8c5ece408b544484782e7ebfdd831768fce2a6b3"
-  integrity sha512-9fPpJq+SvxZk1d3MQALDPFb1out80Y0oNTk6pkqvizGHWAcD4EmPKDHo0zNdaRkm+Q1kMkmxU43UUzE0moBpGA==
+single-spa-angular@6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-6.1.0.tgz#b8995e9ed77cab2baf3c7acaf619b0c6bd0af3c9"
+  integrity sha512-jqogC3h2wZw2cYVp5Ghqh5ZhKw/GRL6efdD2RYKprlk3AxChDyLjitgk90zB5dVA1wZ75Vjb+TIJ+/iZyH8GuA==
   dependencies:
     tslib "^2.3.0"
 
