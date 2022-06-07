@@ -13,7 +13,7 @@
     "@types/sinonjs__fake-timers": "8.1.2",
     "@types/sizzle": "2.3.3",
     "single-spa": "5.9.3",
-    "single-spa-layout": "2.0.1"
+    "single-spa-layout": "2.1.0"
   },
   "devDependencies": {
     "html-webpack-plugin": "5.5.0",
