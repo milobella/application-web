@@ -12,7 +12,7 @@
   "dependencies": {
     "@types/sinonjs__fake-timers": "8.1.2",
     "@types/sizzle": "2.3.3",
-    "single-spa": "5.9.3",
+    "single-spa": "5.9.4",
     "single-spa-layout": "2.1.0"
   },
   "devDependencies": {
