@@ -38,7 +38,7 @@
     "single-spa": "5.9.4",
     "single-spa-angular": "6.3.1",
     "tslib": "2.4.0",
-    "zone.js": "0.11.5"
+    "zone.js": "0.11.6"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "13.1.0",
