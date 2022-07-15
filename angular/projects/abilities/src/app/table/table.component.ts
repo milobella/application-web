@@ -6,7 +6,6 @@ import {
   Input
 } from '@angular/core';
 import { OutletPair } from './outlet.model';
-import { isNotNullOrUndefined } from 'codelyzer/util/isNotNullOrUndefined';
 import { Ability } from '../api/v1/ability.model';
 
 @Component({
@@ -50,7 +49,7 @@ export class TableComponent implements OnInit {
 
   public registerPoi(index: number, poi: OutletPair): void {
     this._pois[index] = poi;
-    if (this._pois.length !== 0 && this._pois.every(value => isNotNullOrUndefined(value))) {
+    if (this._pois.length !== 0 && this._pois.every(value => value)) {
       this.pois.emit(this._pois);
     }
   }
