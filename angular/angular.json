@@ -67,6 +67,7 @@
           },
           "configurations": {
             "development": {
+              "deployUrl": "http://localhost:4200/",
               "main": "projects/menu/src/main.ts",
               "tsConfig": "projects/menu/tsconfig.app-dev.json",
               "customWebpackConfig": {}
@@ -78,6 +79,7 @@
                   "with": "projects/menu/src/environments/environment.prod.ts"
                 }
               ],
+              "deployUrl": "https://milobella.com:10443/spa/menu",
               "optimization": true,
               "outputHashing": "none",
               "sourceMap": false,
@@ -177,11 +179,13 @@
           },
           "configurations": {
             "development": {
+              "deployUrl": "http://localhost:4201/",
               "main": "projects/login/src/main.ts",
               "tsConfig": "projects/login/tsconfig.app-dev.json",
               "customWebpackConfig": {}
             },
             "production": {
+              "deployUrl": "https://milobella.com:10443/",
               "fileReplacements": [
                 {
                   "replace": "projects/login/src/environments/environment.ts",
@@ -251,6 +255,116 @@
         }
       }
     },
+    "try-it": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/try-it",
+      "sourceRoot": "projects/try-it/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/try-it",
+            "index": "projects/try-it/src/index.html",
+            "main": "projects/try-it/src/main.single-spa.ts",
+            "polyfills": "projects/try-it/src/polyfills.ts",
+            "tsConfig": "projects/try-it/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/try-it/src/favicon.ico",
+              "projects/try-it/src/assets"
+            ],
+            "styles": [
+              "projects/try-it/src/styles.css"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "projects/try-it/extra-webpack.config.js",
+              "libraryName": "try-it",
+              "libraryTarget": "umd"
+            },
+            "allowedCommonJsDependencies": [
+              "single-spa-angular/internals"
+            ]
+          },
+          "configurations": {
+            "development": {
+              "deployUrl": "http://localhost:4202/",
+              "main": "projects/try-it/src/main.ts",
+              "tsConfig": "projects/try-it/tsconfig.app-dev.json",
+              "customWebpackConfig": {}
+            },
+            "production": {
+              "deployUrl": "https://milobella.com:10443/",
+              "fileReplacements": [
+                {
+                  "replace": "projects/try-it/src/environments/environment.ts",
+                  "with": "projects/try-it/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "NgOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "try-it:build"
+          },
+          "configurations": {
+            "development": {
+              "browserTarget": "try-it:build:development",
+              "proxyConfig": "proxy.conf.json"
+            },
+            "production": {
+              "browserTarget": "try-it:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "try-it:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/try-it/src/test.ts",
+            "polyfills": "projects/try-it/src/polyfills.ts",
+            "tsConfig": "projects/try-it/tsconfig.spec.json",
+            "karmaConfig": "projects/try-it/karma.conf.js",
+            "assets": [
+              "projects/try-it/src/favicon.ico",
+              "projects/try-it/src/assets"
+            ],
+            "styles": [
+              "projects/try-it/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
     "abilities": {
       "projectType": "application",
       "schematics": {},
@@ -286,11 +400,13 @@
           },
           "configurations": {
             "development": {
+              "deployUrl": "http://localhost:4203/",
               "main": "projects/abilities/src/main.ts",
               "tsConfig": "projects/abilities/tsconfig.app-dev.json",
               "customWebpackConfig": {}
             },
             "production": {
+              "deployUrl": "https://milobella.com:10443/",
               "fileReplacements": [
                 {
                   "replace": "projects/abilities/src/environments/environment.ts",
@@ -395,11 +511,13 @@
           },
           "configurations": {
             "development": {
+              "deployUrl": "http://localhost:4204/",
               "main": "projects/nlg/src/main.ts",
               "tsConfig": "projects/nlg/tsconfig.app-dev.json",
               "customWebpackConfig": {}
             },
             "production": {
+              "deployUrl": "https://milobella.com:10443/",
               "fileReplacements": [
                 {
                   "replace": "projects/nlg/src/environments/environment.ts",
@@ -467,115 +585,6 @@
           }
         }
       }
-    },
-    "try-it": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/try-it",
-      "sourceRoot": "projects/try-it/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
-          "options": {
-            "outputPath": "dist/try-it",
-            "index": "projects/try-it/src/index.html",
-            "main": "projects/try-it/src/main.single-spa.ts",
-            "polyfills": "projects/try-it/src/polyfills.ts",
-            "tsConfig": "projects/try-it/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "projects/try-it/src/favicon.ico",
-              "projects/try-it/src/assets"
-            ],
-            "styles": [
-              "projects/try-it/src/styles.css"
-            ],
-            "scripts": [],
-            "customWebpackConfig": {
-              "path": "projects/try-it/extra-webpack.config.js",
-              "libraryName": "try-it",
-              "libraryTarget": "umd"
-            },
-            "allowedCommonJsDependencies": [
-              "single-spa-angular/internals"
-            ]
-          },
-          "configurations": {
-            "development": {
-              "main": "projects/try-it/src/main.ts",
-              "tsConfig": "projects/try-it/tsconfig.app-dev.json",
-              "customWebpackConfig": {}
-            },
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/try-it/src/environments/environment.ts",
-                  "with": "projects/try-it/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "none",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "NgOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
-          "options": {
-            "browserTarget": "try-it:build"
-          },
-          "configurations": {
-            "development": {
-              "browserTarget": "try-it:build:development",
-              "proxyConfig": "proxy.conf.json"
-            },
-            "production": {
-              "browserTarget": "try-it:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "try-it:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/try-it/src/test.ts",
-            "polyfills": "projects/try-it/src/polyfills.ts",
-            "tsConfig": "projects/try-it/tsconfig.spec.json",
-            "karmaConfig": "projects/try-it/karma.conf.js",
-            "assets": [
-              "projects/try-it/src/favicon.ico",
-              "projects/try-it/src/assets"
-            ],
-            "styles": [
-              "projects/try-it/src/styles.css"
-            ],
-            "scripts": []
-          }
-        }
-      }
     }
-  },
-  "defaultProject": "@milobella/authentication"
+  }
 }
