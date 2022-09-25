@@ -34,7 +34,7 @@
     "@angular/router": "14.2.3",
     "bootstrap": "5.2.1",
     "pixi.js": "6.5.4",
-    "rxjs": "7.5.6",
+    "rxjs": "7.5.7",
     "single-spa": "5.9.4",
     "single-spa-angular": "7.1.0",
     "tslib": "2.4.0",
