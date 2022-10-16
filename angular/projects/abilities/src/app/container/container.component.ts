@@ -10,7 +10,11 @@ import { Abilities, Ability } from '../api/v1/ability.model';
 })
 export class ContainerComponent implements OnInit {
 
-  public abilities: Abilities;
+  public abilities: Abilities = {
+    config: [],
+    cache: [],
+    database: [],
+  }
 
   public links: { from: Outlet, to: Outlet }[] = [
     {
@@ -49,13 +53,16 @@ export class ContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAbilities().subscribe(value => {
-      value.config = ContainerComponent.mergeByNameAndHostAndPort(value.config);
-      value.database = ContainerComponent.mergeByNameAndHostAndPort(value.database);
-      this.abilities = value;
-    }, error => {
-      // console.log(error);
-      // alert(error);
+    this.service.getAbilities().subscribe({
+      next: value => {
+        value.config = ContainerComponent.mergeByNameAndHostAndPort(value.config);
+        value.database = ContainerComponent.mergeByNameAndHostAndPort(value.database);
+        this.abilities = value;
+      },
+      error: error => {
+        console.log(error);
+        alert(error);
+      }
     });
   }
 
