@@ -18,6 +18,7 @@
     "serve:single-spa:try-it": "ng s --project try-it --disable-host-check --port 4202 --live-reload false",
     "build:single-spa:abilities": "ng build abilities",
     "serve:single-spa:abilities": "ng s --project abilities --disable-host-check --port 4203 --live-reload false",
+    "serve:dev:abilities": "ng s --project abilities --configuration=development --port 4203",
     "build:single-spa:nlg": "ng build nlg --deploy-url",
     "serve:single-spa:nlg": "ng s --project nlg --disable-host-check --port 4204 --live-reload false",
     "serve:dev:nlg": "ng s --project nlg --configuration=development --port 4204"
