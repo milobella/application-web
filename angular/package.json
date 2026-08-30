@@ -34,7 +34,7 @@
     "@angular/platform-browser-dynamic": "14.2.12",
     "@angular/router": "14.2.12",
     "bootstrap": "5.2.3",
-    "pixi.js": "6.5.8",
+    "pixi.js": "6.5.9",
     "rxjs": "7.8.0",
     "single-spa": "5.9.4",
     "single-spa-angular": "7.1.0",
